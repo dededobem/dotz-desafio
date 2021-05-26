@@ -36,8 +36,7 @@ Desafio Técnico para preenchimento de vaga na empresa Dotz
 3. Acessar a pasta dotz-front e executar os comandos:
   ```
   yarn ou npm install
-  ```
-  e
+  ```  
   
   ```
   yarn android ou npm run-android
