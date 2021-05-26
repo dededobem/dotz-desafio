@@ -1,0 +1,28 @@
+# Please refer https://aka.ms/HTTPSinContainer on how to setup an https developer certificate for your ASP .NET Core service.
+
+version: '3.4'
+services:
+  mysqldb:
+    image: mysql
+    container_name: mysqldb
+    environment: 
+      - MYSQL_ROOT_PASSWORD=dotz@123
+    volumes: 
+      - .\mysql-docker\:/var/lib/mysql
+    ports:
+      - "3306:3306"  
+    restart: always
+
+  app:
+    image: dotz
+    container_name: dotz-api
+    build:
+      context: .
+      dockerfile:  Dotz.Api/Dockerfile
+    ports:
+      - "8080:80"      
+    depends_on:
+      - mysqldb
+    environment:     
+      - MYSQL_SERVER_NAME=mysqldb    
+      - ASPNETCORE_ENVIRONMENT=Development
