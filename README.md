@@ -37,6 +37,8 @@ Desafio Técnico para preenchimento de vaga na empresa Dotz
   ```
   yarn ou npm install
   ```
+  e
+  
   ```
   yarn android ou npm run-android
   ```
